@@ -33,7 +33,7 @@ public class QueueTest {
         assertEquals(6, queue.dequeue());
     }
 
-    @Test
+    @Test(expected = QueueOverflowException.class)
     public void testQueueOverflow() {
         for (int i = 0; i < CAPACITY; i++) {
             queue.enqueue(i);
